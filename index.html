@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            video {
+                display: none;
+            }
 
+            body, html {
+                height: 100%;
+                margin: 0;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            button {
+                font-size: 40px;
+            }
+        </style>
+        <script>
+            function revealtruth() {
+                const element = document.getElementById('vid');
+                const button = document.getElementById('btn');
+
+                element.style.display = 'block';
+                button.style.display = 'none';
+            }
+        </script>
     </head>
     <body>
-        Hello World
+        <div>
+            <button id="btn" type="button" onclick="revealtruth()">What should I do?</button>
+            <video id="vid" loop autoplay>
+                <source src="assets/karlessmacher.mp4" type="video/mp4">
+            </video>
+        </div>
     </body>
 </html>
